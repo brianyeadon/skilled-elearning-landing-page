@@ -1,0 +1,328 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*** ROOT ***/
+:root {
+  /* Colors */
+  --clr-dark-blue: hsl(234, 53%, 16%);
+  --clr-gray: hsl(232, 10%, 56%);
+  --clr-dark-pink: hsl(341, 92%, 62%);
+  --clr-blue-gray: hsl(234, 25%, 52%);
+  --clr-light-pink: hsl(341, 100%, 83%);
+  --clr-white: hsl(0, 0%, 100%);
+
+  --clr-gradient1-start: hsl(13, 100%, 64%);
+  --clr-gradient-end: hsl(322, 87%, 55%);
+  --clr-gradient2-start: hsl(237, 100%, 64%);
+
+  /* Font Size */
+  --fs-8px: 0.5rem;
+  --fs-10px: 0.625rem;
+  --fs-11px: 0.6875rem;
+  --fs-12px: 0.75rem;
+  --fs-13px: 0.7125rem;
+  --fs-14px: 0.875rem;
+  --fs-15px: 0.9375rem;
+  --fs-16px: 1rem;
+  --fs-17px: 1.0625rem;
+  --fs-18px: 1.125rem;
+  --fs-20px: 1.25rem;
+  --fs-22px: 1.375rem;
+  --fs-24px: 1.5rem;
+  --fs-28px: 1.75rem;
+  --fs-32px: 2rem;
+  --fs-36px: 2.25rem;
+  --fs-40px: 2.5rem;
+  --fs-44px: 2.75rem;
+  --fs-48px: 3rem;
+  --fs-56px: 3.5rem;
+  --fs-64px: 4rem;
+  --fs-72px: 4.5rem;
+  --fs-80px: 5rem;
+
+  /* Font Weight */
+  --fw-m: 500;
+  --fw-b: 700;
+  --fw-eb: 800;
+}
+
+/*** GLOBAL ***/
+body {
+  background-image: linear-gradient(
+    180deg,
+    hsl(0, 0%, 100%),
+    hsl(236, 100%, 97%)
+  );
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: var(--fs-16px);
+  line-height: 1.75;
+  font-weight: var(--fw-m);
+  color: var(--clr-gray);
+  text-align: left;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-dark,
+.logo-light {
+  max-height: var(--fs-28px);
+  max-width: 89px;
+}
+
+/*** UTILITIES ***/
+.flex {
+  display: flex;
+}
+
+/*** TYPOGRAPHY ***/
+
+/* logo as text */
+.logo {
+  color: var(--clr-dark-blue);
+  font-size: var(--fs-28px);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.hero-heading {
+  color: var(--clr-dark-blue);
+  font-size: var(--fs-40px);
+  line-height: 1.25;
+  font-weight: var(--fw-eb);
+  margin-bottom: 26px;
+}
+
+.hero-subheading {
+  line-height: 1.75;
+  margin-bottom: var(--fs-24px);
+}
+
+.course-intro-heading {
+  color: var(--clr-white);
+  font-size: var(--fs-24px);
+  line-height: 1.25; /* change to 1.25? */
+  font-weight: var(--fw-eb);
+}
+
+.course-title {
+  font-size: var(--fs-20px);
+  line-height: 1.25;
+  color: var(--clr-dark-blue);
+  font-weight: var(--fw-eb);
+  margin-bottom: var(--fs-16px);
+}
+
+.course-desc {
+  font-size: var(--fs-16px); /* change to 18px? */
+  line-height: 1.625;
+  margin-bottom: var(--fs-24px);
+}
+
+.cta-link {
+  color: var(--clr-dark-pink);
+  font-size: var(--fs-18px);
+  line-height: 1.5;
+  font-weight: var(--fw-b);
+
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/*** BUTTONS ***/
+.btn {
+  color: var(--clr-white);
+  font-weight: var(--fw-b);
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn-dark {
+  background-color: var(--clr-dark-blue);
+  padding: var(--fs-10px) var(--fs-24px);
+  border-radius: var(--fs-28px);
+}
+
+.btn-grad1 {
+  background-image: linear-gradient(
+    180deg,
+    var(--clr-gradient1-start),
+    var(--clr-gradient-end)
+  );
+  padding: var(--fs-15px) 38px;
+  border-radius: var(--fs-32px);
+}
+
+.btn-grad2 {
+  background-color: var(--clr-dark-pink);
+  background-image: linear-gradient(
+    180deg,
+    var(--clr-gradient2-start),
+    var(--clr-gradient-end)
+  );
+  padding: var(--fs-10px) var(--fs-24px);
+  border-radius: var(--fs-28px);
+}
+
+/*** LAYOUT ***/
+header,
+main {
+  width: 100%;
+  max-width: 375px;
+}
+
+header {
+  /* padding: var(--fs-16px) var(--fs-16px) 0; */
+  padding-top: var(--fs-16px);
+  /* margin-bottom: 66px; */
+
+  /* outline: 1px dashed salmon; */
+}
+
+.nav,
+.hero-content {
+  padding: 0 var(--fs-16px);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 38px;
+}
+
+.hero-content {
+  margin-bottom: 46px;
+}
+
+main {
+  padding: 0 var(--fs-16px);
+  margin-bottom: var(--fs-80px);
+
+  /* outline: 1px dashed salmon; */
+}
+
+.course-intro,
+.course-info {
+  border-radius: var(--fs-10px);
+}
+
+.course-intro {
+  background-image: linear-gradient(
+    180deg,
+    var(--clr-gradient1-start),
+    var(--clr-gradient-end)
+  );
+  border-radius: var(--fs-10px);
+  padding: 24px 28px 32px;
+  margin-bottom: var(--fs-40px);
+}
+
+.course-info {
+  background-color: var(--clr-white);
+  border-radius: var(--fs-10px);
+  padding: 56px 28px 32px;
+
+  /* position: relative; */
+}
+
+.course-info:not(:last-child) {
+  margin-bottom: var(--fs-40px);
+}
+
+footer {
+  background-color: var(--clr-dark-blue);
+  padding: var(--fs-36px) var(--fs-16px);
+  width: 100%;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 343px;
+  /* outline: 1px dashed salmon; */
+}
+
+/*** MEDIA QUERIES ***/
+/* Global */
+/* Typography */
+/* Buttons */
+/* Layout */
